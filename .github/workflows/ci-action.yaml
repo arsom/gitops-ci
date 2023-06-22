@@ -1,4 +1,4 @@
-# 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
+# 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
 # This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
 
@@ -93,7 +93,7 @@ jobs:
           git config --global user.email "arsom_1104@hotmail.com"
           git config --global user.name "arsom"
           echo ${{ github.sha }}
-          sed -i "s#${{ github.actor }}.*#${{ github.actor }}/reactapp-ci:${{ github.sha }}#g" deployment.yaml
+          sed -i "s#${{ github.actor }}.*#${{ github.actor }}/reactapp:${{ github.sha }}#g" deployment.yaml
           git add -A
           git commit -am "Update image for - ${{ github.sha }}"
       - run: echo ${{ github }}
