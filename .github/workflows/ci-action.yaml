@@ -71,7 +71,7 @@ jobs:
           context: ./
           # Note: tags has to be all lower-case
           tags: |
-            iamsamitdev/reactapp-ci:${{ github.sha }} 
+            arsom/reactapp:${{ github.sha }} 
           # build on feature branches, push only on main branch
           push: ${{ github.ref == 'refs/heads/main' }}
 
@@ -84,13 +84,13 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          repository: iamsamitdev/gitops-infra
+          repository: arsom/gitops-infra
           ref: 'main'
           token: ${{ secrets.G_TOKEN }}
       - name: setup git config
         run: |
-          git config --global user.email "samitkoyom@gmail.com"
-          git config --global user.name "iamsamit"
+          git config --global user.email "arsom_1104@hotmail.com"
+          git config --global user.name "arsom"
           echo ${{ github.sha }}
           sed -i "s#${{ github.actor }}.*#${{ github.actor }}/reactapp-ci:${{ github.sha }}#g" deployment.yaml
           git add -A
